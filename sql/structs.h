@@ -874,7 +874,16 @@ public:
   Timeval(my_time_t sec, ulong usec)
   {
     tv_sec= sec;
-    tv_usec= usec;
+
+    /*
+      According to POSIX.1-2001 tv_usec is declared as suseconds_t.
+      On some platform (e.g. MacOS) the real type of suseconds_t
+      is uint. To avoid compiler warnings about losing integer precision
+      during implicit conversion from ulong to uint it is better
+      to cast usec parameter explicitly to uint.
+    */
+    DBUG_ASSERT(usec < 1000000);
+    tv_usec= (uint)usec;
   }
   explicit Timeval(const timeval &tv)
    :timeval(tv)
