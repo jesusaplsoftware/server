@@ -8,11 +8,8 @@
 #
 
 # The following should be used when InnoDB recovery works for rename table
-#let $engine_count=5;
-#let $engines='myisam','aria','aria_notrans','innodb','csv';
-
-let $engine_count=4;
-let $engines='myisam','aria','aria_notrans','csv';
+let $engine_count=5;
+let $engines='myisam','aria','aria_notrans','innodb','csv';
 
 let $crash_count=6;
 let $crash_points='definition_file_after_create','ddl_log_rename_before_rename_table','ddl_log_rename_before_phase_trigger','ddl_log_rename_before_rename_trigger','ddl_log_rename_before_stat_tables','ddl_log_rename_after_stat_tables';
