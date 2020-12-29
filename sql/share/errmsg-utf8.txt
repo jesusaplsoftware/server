@@ -970,7 +970,7 @@ ER_OUT_OF_RESOURCES
         rus "Недостаточно памяти."
         serbian "Nema memorije."
         slo "Málo miesta-pamäti pre vlákno"
-        spa "Memoria/espacio de trabajo insuficiente"
+        spa "Memoria/espacio de trabajo insuficiente."
         swe "Fick slut på minnet."
         ukr "Брак пам'яті."
 ER_BAD_HOST_ERROR 08S01 
@@ -2802,7 +2802,7 @@ ER_STACK_OVERRUN
         rus "Стек потоков переполнен:  использовано: %ld из %ld стека.  Применяйте 'mariadbd --thread_stack=#' для указания большего размера стека, если необходимо"
         serbian "Prepisivanje thread stack-a:  Upotrebljeno: %ld od %ld stack memorije.  Upotrebite 'mariadbd --thread_stack=#' da navedete veći stack ako je potrebno"
         slo "Pretečenie zásobníku vlákna:  použité: %ld z %ld.  Použite 'mariadbd --thread_stack=#' k zadaniu väčšieho zásobníka"
-        spa "Desbordamiento de la pila de hilos: Usado: %ld de una pila de %ld. Usa 'mysqld --thread_stack=#' para especificar una mayor pila, si es necesario"
+        spa "Desbordamiento de la pila de hilos: Usado: %ld de una pila de %ld. Considera el incrementar la variable de sistema thread_stack"
         swe "Trådstacken tog slut:  Har använt %ld av %ld bytes.  Använd 'mariadbd --thread_stack=#' ifall du behöver en större stack"
         ukr "Стек гілок переповнено:  Використано: %ld з %ld. Використовуйте 'mariadbd --thread_stack=#' аби зазначити більший стек, якщо необхідно"
 ER_WRONG_OUTER_JOIN 42000 
@@ -3001,7 +3001,7 @@ ER_HOST_IS_BLOCKED
         rum "Host-ul '%-.64s' e blocat din cauza multelor erori de conectie. Poti deploca folosind 'mariadb-admin flush-hosts'"
         rus "Хост '%-.64s' заблокирован из-за слишком большого количества ошибок соединения. Разблокировать его можно с помощью 'mariadb-admin flush-hosts'"
         serbian "Host '%-.64s' je blokiran zbog previše grešaka u konekciji.  Možete ga odblokirati pomoću komande 'mariadb-admin flush-hosts'"
-        spa "El equipo '%-.64s' está bloqueado debido a muchos errores de conexión; desbloquea con 'mysqladmin flush-hosts'"
+        spa "El equipo '%-.64s' está bloqueado debido a muchos errores de conexión; desbloquea con 'mariadb-admin flush-hosts'"
         swe "Denna dator, '%-.64s', är blockerad pga många felaktig paket. Gör 'mariadb-admin flush-hosts' för att ta bort alla blockeringarna"
         ukr "Хост '%-.64s' заблоковано з причини великої кількості помилок з'єднання. Для розблокування використовуйте 'mariadb-admin flush-hosts'"
 ER_HOST_NOT_PRIVILEGED  
@@ -4271,7 +4271,7 @@ ER_TRANS_CACHE_FULL
         jpn "複数ステートメントから成るトランザクションが 'max_binlog_cache_size' 以上の容量を必要としました。このシステム変数を増加して、再試行してください。"
         por "Transações multi-declaradas (multi-statement transactions) requeriram mais do que o valor limite (max_binlog_cache_size) de bytes para armazenagem. Aumente o valor desta variável do mariadbd e tente novamente"
         rus "Транзакции, включающей большое количество команд, потребовалось более чем 'max_binlog_cache_size' байт. Увеличьте эту переменную сервера mariadbd и попробуйте еще раз"
-        spa "Transacción multi-sentencia requirió de más de 'max_binlog_cache_size' bytes de almacenamiento. Aumente esta variable mysqld e intente de nuevo"
+        spa "Transacción multi-sentencia requirió de más de 'max_binlog_cache_size' bytes de almacenamiento"
         swe "Transaktionen krävde mera än 'max_binlog_cache_size' minne. Öka denna mariadbd-variabel och försök på nytt"
         ukr "Транзакція з багатьма виразами вимагає більше ніж 'max_binlog_cache_size' байтів для зберігання. Збільште цю змінну mariadbd та спробуйте знову"
 ER_SLAVE_MUST_STOP  
@@ -5065,7 +5065,7 @@ ER_MISSING_SKIP_SLAVE
         ger "Es wird empfohlen, mit --skip-slave-start zu starten, wenn mit START SLAVE UNTIL eine Schritt-für-Schritt-Replikation ausgeführt wird. Ansonsten gibt es Probleme, wenn ein Slave-Server unerwartet neu startet"
         jpn "START SLAVE UNTIL で段階的にレプリケーションを行う際には、--skip-slave-start オプションを使うことを推奨します。使わない場合、スレーブのmariadbdが不慮の再起動をすると問題が発生します。"
         por "É recomendado para rodar com --skip-slave-start quando fazendo replicação passo-por-passo com START SLAVE UNTIL, de outra forma você não está seguro em caso de inesperada reinicialição do mariadbd escravo"
-        spa "Se recomienda usar --skip-slave-start al hacer réplica paso a paso con START SLAVE UNTIL; en caso contrario, obtendrás problemas si tiene luigar un rearranque inesperado del esclavo mysqld"
+        spa "Se recomienda usar --skip-slave-start al hacer réplica paso a paso con START SLAVE UNTIL; en caso contrario, obtendrás problemas si tiene lugar un rearranque inesperado del esclavo mariadbd"
 ER_UNTIL_COND_IGNORED  
         eng "SQL thread is not to be started so UNTIL options are ignored"
         ger "SQL-Thread soll nicht gestartet werden. Daher werden UNTIL-Optionen ignoriert"
@@ -5812,7 +5812,7 @@ ER_STACK_OVERRUN_NEED_MORE
         eng "Thread stack overrun:  %ld bytes used of a %ld byte stack, and %ld bytes needed. Consider increasing the thread_stack system variable."
         ger "Thread-Stack-Überlauf: %ld Bytes eines %ld-Byte-Stacks in Verwendung, und %ld Bytes benötigt. Verwenden Sie 'mariadbd --thread_stack=#', um einen größeren Stack anzugeben"
         jpn "スレッドスタック不足です(使用: %ld ; サイズ: %ld ; 要求: %ld)。より大きい値で 'mariadbd --thread_stack=#' の指定をしてください。"
-        spa "Desbordamiento en pila de hilos: %ld bytes usados de una pila de %ld y son necesarios %ld bytes. Usa 'mysqld --thread_stack=#' para especificar una pila mayor"
+        spa "Desbordamiento en pila de hilos: %ld bytes usados de una pila de %ld y son necesarios %ld bytes. Considera el incrementar la variable de sistema thread_stack'."
 ER_TOO_LONG_BODY 42000 S1009
         eng "Routine body for '%-.100s' is too long"
         ger "Routinen-Body für '%-.100s' ist zu lang"
@@ -5896,7 +5896,7 @@ ER_SP_PROC_TABLE_CORRUPT
         eng "Failed to load routine %-.192s (internal code %d). For more details, run SHOW WARNINGS"
         ger "Routine %-.192s (interner Code %d) konnte nicht geladen werden. Weitere Einzelheiten erhalten Sie, wenn Sie SHOW WARNINGS ausführen"
         ukr "Невдала спроба завантажити процедуру %-.192s (внутрішний код %d). Для отримання детальної інформації використовуйте SHOW WARNINGS"
-        spa "No pude cargar la rutina %-.192s. Falta la tabla mysql.proc o está corrupta o contiene datos malos (código interno %d)"
+        spa "No pude cargar la rutina %-.192s (código interno %d). Para más detalles, ejecuta SHOW WARINGS"
 ER_SP_WRONG_NAME 42000
         eng "Incorrect routine name '%-.192s'"
         ger "Ungültiger Routinenname '%-.192s'"
@@ -6990,7 +6990,7 @@ ER_SLAVE_HEARTBEAT_VALUE_OUT_OF_RANGE_MAX
 
 ER_STMT_CACHE_FULL  
         eng "Multi-row statements required more than 'max_binlog_stmt_cache_size' bytes of storage."
-        spa "Las sentencis Multi-fila requieren de más de 'max_binlog_stmt_cache_size' bytes para almacenaje; incremente esta variable mysql y pruebe otra vez"
+        spa "Las sentencias Multi-fila requieren de más de 'max_binlog_stmt_cache_size' bytes para almacenaje."
 
 ER_MULTI_UPDATE_KEY_CONFLICT
   eng "Primary key/partition key update is not allowed since the table is updated both as '%-.192s' and '%-.192s'"
@@ -7209,7 +7209,7 @@ ER_INSECURE_PLAIN_TEXT
 
 ER_INSECURE_CHANGE_MASTER
   eng "Storing MariaDB user name or password information in the master.info repository is not secure and is therefore not recommended. Please see the MariaDB Manual for more about this issue and possible alternatives"
-  spa "Almacenar nombre de usuario de MySQL o información de contraseña en el repositorio master.info no es seguro y por ello no se recomienda. Por favor, mira el manual de MySQL para saber más acerca de este asunto y sus posibles alternativas"
+  spa "Almacenar nombre de usuario de MariaDB o información de contraseña en el repositorio master.info no es seguro y por ello no se recomienda. Por favor, mira el manual de MariaDB para saber más acerca de este asunto y sus posibles alternativas"
 
 ER_FOREIGN_DUPLICATE_KEY_WITH_CHILD_INFO 23000 S1009
         eng "Foreign key constraint for table '%.192s', record '%-.192s' would lead to a duplicate entry in table '%.192s', key '%.192s'"
@@ -7350,7 +7350,7 @@ ER_TOO_LONG_TABLE_PARTITION_COMMENT
 
 ER_SLAVE_CONFIGURATION
   eng "Slave is not configured or failed to initialize properly. You must at least set --server-id to enable either a master or a slave. Additional error messages can be found in the MariaDB error log"
-  spa "El esclavo no está configurado o falló al inicializarse de forma adecuada. Debes de poner al menos --server-id para activar o bien un maestro o un esclavo. Mensajes de error adicionales pueden ser hallados en historial (log) de errores de MySQL"
+  spa "El esclavo no está configurado o falló al inicializarse de forma adecuada. Debes de poner al menos --server-id para activar o bien un maestro o un esclavo. Mensajes de error adicionales pueden ser hallados en historial (log) de errores de MariaDB"
 
 ER_INNODB_FT_LIMIT
   eng "InnoDB presently supports one FULLTEXT index creation at a time"
@@ -7386,11 +7386,11 @@ ER_MTS_CHANGE_MASTER_CANT_RUN_WITH_GAPS
 
 ER_MTS_RECOVERY_FAILURE
   eng "Cannot recover after SLAVE errored out in parallel execution mode. Additional error messages can be found in the MariaDB error log"
-  spa "No puedo recuperar después de que SLAVE diera error en modo paralelo de ejecución. Mensajes de error adicionales se pueden hallar en el historial (log) de error de  MySQL"
+  spa "No puedo recuperar después de que SLAVE diera error en modo paralelo de ejecución. Mensajes de error adicionales se pueden hallar en el historial (log) de error de  MariaDB"
 
 ER_MTS_RESET_WORKERS
   eng "Cannot clean up worker info tables. Additional error messages can be found in the MariaDB error log"
-  spa "No puedo limpiar tablas de información de trabajador. Mensajes de error adicionales se pueden hallar en el historial (log) de error de  MySQL"
+  spa "No puedo limpiar tablas de información de trabajador. Mensajes de error adicionales se pueden hallar en el historial (log) de error de  MariaDB"
 
 ER_COL_COUNT_DOESNT_MATCH_CORRUPTED_V2
   eng "Column count of %s.%s is wrong. Expected %d, found %d. The table is probably corrupted"
@@ -8067,7 +8067,7 @@ ER_FK_DEPTH_EXCEEDED
 ER_COL_COUNT_DOESNT_MATCH_PLEASE_UPDATE_V2
         eng "Column count of %s.%s is wrong. Expected %d, found %d. Created with MariaDB %d, now running %d. Please use mariadb-upgrade to fix this error."
         ger "Spaltenanzahl von %s.%s falsch. %d erwartet, aber %d erhalten. Erzeugt mit MariaDB %d, jetzt unter %d. Bitte benutzen Sie mariadb-upgrade, um den Fehler zu beheben"
-        spa "El contador de columna de %s.%s está equivocado. Se esperaba %d, hallado %d, Creado con MySQL %d, ahora ejecutando %d. Por favor, usa mysql_upgrade para arreglar este error."
+        spa "El contador de columna de %s.%s está equivocado. Se esperaba %d, hallado %d. Creado con MariaDB %d, ahora ejecutando %d. Por favor, usa mariadb_upgrade para arreglar este error."
 
 ER_WARN_TRIGGER_DOESNT_HAVE_CREATED
   eng "Trigger %s.%s.%s does not have CREATED attribute."
